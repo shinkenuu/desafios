@@ -33,3 +33,12 @@ O exemplo de output está [neste arquivo](https://github.com/idwall/desafios/blo
 ### Extras
 
 - Parametrização da quantidade de caracteres por linha.
+
+### Sugestão de teste
+
+```sh
+line_breaker.py -h
+pytest test_line_breaker.py
+
+```
+
