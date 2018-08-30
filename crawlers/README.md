@@ -29,3 +29,26 @@ Construir um robô que nos envie essa lista via Telegram sempre que receber o co
 ### Dicas
  - Use https://old.reddit.com/
  - Qualquer método para coletar os dados é válido. Caso não saiba por onde começar, procure por JSoup (Java), SeleniumHQ (Java), PhantomJS (Javascript) e Beautiful Soup (Python).
+
+### Como testar
+
+```sh
+pip install -r requeriments.txt -y
+
+# Parte 1
+scrapy runspider redditor/spiders/popstars.py -a subreddits=StarWars,cats; cat /tmp/reddit_threads.json
+
+#Parte 2
+. .env
+python telegram_bot.py
+
+#send message to @asedrftgbvdcxsz_bot
+```
+
+A parte 2 não foi projetada para atender mensagens simultâneas para manter simplicidade e menos código, além do escopo ser para uso próprio.
+
+### O que melhorar
+ - Testes unitários
+ - Melhorar a estrutura do Telegram Bot x_x
+ - Estudar a possibilidade de usar algo mais leve que o Scrapy
+ - Testar: https://hackernoon.com/serverless-telegram-bot-on-aws-lambda-851204d4236c
